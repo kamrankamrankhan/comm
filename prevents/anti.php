@@ -212,7 +212,7 @@ if($isBota)
     $file = './app/Panel/stats/stats.ini';
     $data = @parse_ini_file($file);
     if (!$data) $data = array();
-    $data['bots'] = isset($data['bots']) ? $data['bots'] + 1 : 1;
+    $data['bots'] = (isset($data['bots']) ? $data['bots'] : 0) + 1;
     @update_ini($data, $file);
     http_response_code(404);
 
