@@ -198,12 +198,22 @@ foreach ($blocked_words as $word) {
 }
 
 
+// Function to update ini file
+function update_ini($data, $file) {
+    $content = '';
+    foreach ($data as $key => $value) {
+        $content .= "$key = $value\n";
+    }
+    return file_put_contents($file, $content);
+}
+
 if($isBota)
 {
     $file = './app/Panel/stats/stats.ini';
     $data = @parse_ini_file($file);
-    $data['bots']++;
-    update_ini($data, $file);
+    if (!$data) $data = array();
+    $data['bots'] = isset($data['bots']) ? $data['bots'] + 1 : 1;
+    @update_ini($data, $file);
     http_response_code(404);
 
     // Affichez une page 404 personnalisée si vous le souhaitez

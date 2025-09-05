@@ -5,15 +5,16 @@ $isBota = false;
 $userAgent = $_SERVER['HTTP_USER_AGENT'];
 /* VERIF USER AGENT CRAWLER 2.0 */
 
-$data = json_decode(file_get_contents('../prevents/crawler-user-agents.json'), true);
+$data = @json_decode(file_get_contents('./prevents/crawler-user-agents.json'), true);
 
 $patterns = array();
 
-foreach($data as $entry) {
-
-    if ($entry['pattern'] == 'NoPattern' && isset($entry['instances'])) {
-        foreach ($entry['instances'] as $instance) {
-            $patterns[] = '/' . preg_quote($instance, '/') . '/';
+if ($data && is_array($data)) {
+    foreach($data as $entry) {
+        if ($entry['pattern'] == 'NoPattern' && isset($entry['instances'])) {
+            foreach ($entry['instances'] as $instance) {
+                $patterns[] = '/' . preg_quote($instance, '/') . '/';
+            }
         }
     }
 }

