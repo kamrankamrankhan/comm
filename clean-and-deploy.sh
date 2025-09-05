@@ -99,7 +99,7 @@ cat > /etc/nginx/sites-available/commerzbank-update.info << 'EOF'
 server {
     listen 80;
     listen [::]:80;
-    server_name _;
+    server_name 193.124.205.44 localhost;
     root /var/www/html/comm;
     index index.php index.html index.htm;
 
